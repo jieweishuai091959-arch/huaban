@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#DDF3FF">
+<title>🎨</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 卡通背景：天空、云朵、草地 -->
+<div class="page-bg" aria-hidden="true">
+    <span class="cloud cloud-1"></span>
+    <span class="cloud cloud-2"></span>
+    <span class="cloud cloud-3"></span>
+    <span class="cloud cloud-4"></span>
+    <div class="hill hill-back"></div>
+    <div class="hill hill-front"></div>
+</div>
+
+<div class="app">
+    <!-- 左侧颜色面板 -->
+    <aside class="panel panel-colors" aria-label="颜色">
+        <div class="swatches">
+            <button class="swatch active" type="button" data-color="#E74C3C" style="--c:#E74C3C" aria-label="红色"></button>
+            <button class="swatch" type="button" data-color="#F39C12" style="--c:#F39C12" aria-label="橙色"></button>
+            <button class="swatch" type="button" data-color="#F7D046" style="--c:#F7D046" aria-label="黄色"></button>
+            <button class="swatch" type="button" data-color="#5BBE5B" style="--c:#5BBE5B" aria-label="绿色"></button>
+            <button class="swatch" type="button" data-color="#1ABC9C" style="--c:#1ABC9C" aria-label="青色"></button>
+            <button class="swatch" type="button" data-color="#3D8BFD" style="--c:#3D8BFD" aria-label="蓝色"></button>
+            <button class="swatch" type="button" data-color="#8E5BD6" style="--c:#8E5BD6" aria-label="紫色"></button>
+            <button class="swatch" type="button" data-color="#F26FA8" style="--c:#F26FA8" aria-label="粉色"></button>
+            <button class="swatch" type="button" data-color="#8B5A2B" style="--c:#8B5A2B" aria-label="棕色"></button>
+            <button class="swatch" type="button" data-color="#2B2B2B" style="--c:#2B2B2B" aria-label="黑色"></button>
+        </div>
+    </aside>
+
+    <!-- 中间画布 -->
+    <main class="stage">
+        <div class="canvas-frame" id="wrapper">
+            <canvas id="sceneCanvas"></canvas>
+            <canvas id="drawCanvas"></canvas>
+        </div>
+    </main>
+
+    <!-- 右侧工具面板 -->
+    <aside class="panel panel-tools" aria-label="工具">
+        <div class="sizes">
+            <button class="size" type="button" data-size="8" aria-label="极细笔">
+                <span class="dot dot-1"></span>
+            </button>
+            <button class="size active" type="button" data-size="16" aria-label="中笔">
+                <span class="dot dot-2"></span>
+            </button>
+            <button class="size" type="button" data-size="42" aria-label="粗笔">
+                <span class="dot dot-3"></span>
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="tools">
+            <button id="eraserTool" class="big-btn" type="button" aria-label="橡皮">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.2 16.3 10.9 9.6a1.9 1.9 0 0 1 2.7 0l3.8 3.8a1.9 1.9 0 0 1 0 2.7l-3.9 3.9H8.1l-3.9-3.7z"></path>
+                    <path d="M10.9 9.6 15.2 5.3a1.9 1.9 0 0 1 2.7 0l3.8 3.8a1.9 1.9 0 0 1 0 2.7l-4.3 4.3"></path>
+                    <path d="M7 19.9h13"></path>
+                </svg>
+            </button>
+            <button id="undoBtn" class="big-btn" type="button" aria-label="撤销" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 5 3.5 9.5 8 14"></path>
+                    <path d="M3.5 9.5H14a5.5 5.5 0 0 1 0 11h-3"></path>
+                </svg>
+            </button>
+            <button id="saveBtn" class="big-btn save" type="button" aria-label="保存作品">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+                    <path d="M12 3.4 14.6 8.8 20.5 9.7 16.2 13.9 17.2 19.8 12 17 6.8 19.8 7.8 13.9 3.5 9.7 9.4 8.8 12 3.4Z"></path>
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- 右下角重置 -->
+    <button id="resetBtn" class="reset-btn" type="button" aria-label="重置画布">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+    </button>
+</div>
+
+<script src="assets/lineart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
